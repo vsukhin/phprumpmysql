@@ -31,7 +31,7 @@ running on a
       die('Could not create database: ' . mysql_error() . '<br>');
    }
    
-   echo "Database test_db created successfully\n";
+   echo "Database test_db created successfully<br>";
 
    $sql = 'CREATE TABLE employee( '.
       'emp_id INT NOT NULL AUTO_INCREMENT, '.
