@@ -4,14 +4,14 @@ date_default_timezone_set('UTC');
 <html>
 <body style="font-size: 14pt;">
 Hello, <?php echo $_SERVER['REMOTE_ADDR']; ?>
-<p>
+<br>
 It is now <?php echo date(DATE_RFC2822); ?>
-<p>
+<br>
 Served to you by
 <a href="http://nginx.org/">Nginx</a>,
 running on a
 <a href="http://rumpkernel.org">rump kernel</a>...
-<p>
+<br>
 <?php
    $dbhost = 'mysql:3306';
    $dbuser = 'rump';
@@ -19,16 +19,16 @@ running on a
    $conn = mysql_connect($dbhost, $dbuser, $dbpass);
    
    if(! $conn ) {
-      die('Could not connect: ' . mysql_error());
+      die('Could not connect: ' . mysql_error() . '<br>');
    }
    
-   echo 'Connected successfully to mysql server';
+   echo 'Connected successfully to mysql server: ' . $dbhost . '<br>';
    
    $sql = 'CREATE Database test_db';
    $retval = mysql_query( $sql, $conn );
    
    if(! $retval ) {
-      die('Could not create database: ' . mysql_error());
+      die('Could not create database: ' . mysql_error() . '<br>');
    }
    
    echo "Database test_db created successfully\n";
@@ -44,10 +44,10 @@ running on a
    $retval = mysql_query( $sql, $conn );
    
    if(! $retval ) {
-      die('Could not create table: ' . mysql_error());
+      die('Could not create table: ' . mysql_error() . '<br>');
    }
    
-   echo "Table employee created successfully\n";
+   echo "Table employee created successfully<br>";
    
    mysql_close($conn);
 
@@ -57,19 +57,19 @@ running on a
    $conn = mysql_connect($dbhost, $dbuser, $dbpass);
    
    if(! $conn ) {
-      die('Could not connect: ' . mysql_error());
+      die('Could not connect: ' . mysql_error(). '<br>');
    }
    
-   echo 'Connected successfully to mysql server';
+   echo 'Connected successfully to mysql server: ' . $dbhost . '<br>';
    
    $sql = 'CREATE Database example_db';
    $retval = mysql_query( $sql, $conn );
    
    if(! $retval ) {
-      die('Could not create database: ' . mysql_error());
+      die('Could not create database: ' . mysql_error() . '<br>');
    }
    
-   echo "Database example_db created successfully\n";
+   echo "Database example_db created successfully<br>";
 
    $sql = 'CREATE TABLE company( '.
       'cmp_id INT NOT NULL AUTO_INCREMENT, '.
@@ -82,10 +82,10 @@ running on a
    $retval = mysql_query( $sql, $conn );
    
    if(! $retval ) {
-      die('Could not create table: ' . mysql_error());
+      die('Could not create table: ' . mysql_error() . '<br>');
    }
    
-   echo "Table company created successfully\n";
+   echo "Table company created successfully<br>";
    
    mysql_close($conn);
 
