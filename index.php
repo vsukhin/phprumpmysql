@@ -13,7 +13,7 @@ running on a
 <a href="http://rumpkernel.org">rump kernel</a>...
 <p>
 <?php
-   $dbhost = 'mysql:3036';
+   $dbhost = 'mysql:3306';
    $dbuser = 'rump';
    $dbpass = '';
    $conn = mysql_connect($dbhost, $dbuser, $dbpass);
